@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMPOLINE - Gestão Fiscal e Tributária</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index.js">
+    <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +14,7 @@
             <div class="nav-content">
                  
                 <div class="logo">
-                    <h1>IMPOLINE</h1>
+                    <h1>IMPOLiNE</h1>
                 </div>
    
                 <div class="nav-buttons">
@@ -64,9 +63,19 @@
     <button onclick="calculateTax()" class="buttonclas">Set Values</button>
 
     </div>
-            <p>dsadsa</p>
-        </div>
+            
+         <div class="card-content">
+                <div class="chart-container">
+                    <svg class="donut-chart" width="300" height="300" viewBox="0 0 300 300">
+                        <g class="chart-group" transform="translate(150,150)">
+                            <!-- Os segmentos serão criados dinamicamente pelo JavaScript -->
+                        </g>
+                        <text class="total-text" x="150" y="145" text-anchor="middle">Total</text>
+                        <text class="total-value" x="150" y="165" text-anchor="middle">1000</text>
+                    </svg>
+                </div>
 
     </main>
+    <script src="index.js"></script>
 </body>
 </html>
