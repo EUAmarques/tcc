@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPOLINE - Gestão Fiscal e Tributária</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+     
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                 
+                <div class="logo">
+                    <button class="h1button" onclick="window.location.href='test.html'"><h1>IMPOLINE</h1></button>
+                </div>
+   
+                <div class="nav-buttons" onclick="window.location.href='login.html'">
+                    <button class="btn btn-ghost">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                            <polyline points="10,17 15,12 10,7"/>
+                            <line x1="15" y1="12" x2="3" y2="12"/>
+                        </svg>
+                        Login
+                    </button>
+                    <button class="btn btn-primary" onclick="window.location.href='cadastro.html'">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <line x1="19" y1="8" x2="19" y2="14"/>
+                            <line x1="22" y1="11" x2="16" y2="11"/>
+                        </svg>
+                        Cadastro
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <h1 class="hero-title">IMPOLINE</h1>
+                <p class="hero-subtitle">Sua solução completa para gestão fiscal e tributária</p>
+            </div>
+        </section>
+        
+        <div class="grid">
+             <div class="exemplo4">
+    <h1 class="title-exemplo">Tax Calculation</h1>
+   <div class="cal">
+    <label for="income" class="label">SALARIO</label><br>
+    <input type="number" id="income"  class="input"/>              
+   </div>
+    <button onclick="salario()" class="buttonclas">ENVIAR</button>
+
+    </div>
+         <div class="card-content">   
+             <div class="chart-container">
+            <svg class="donut-chart" viewBox="0 0 200 200">
+                <g class="slices"></g>
+            </svg>
+            
+            <div class="center-text">
+                <div class="center-title">Total</div>
+                <div class="center-total" id="totalValue">R$ 0</div>
+            </div>
+            
+            <div class="value-display value-right" id="value1">
+                <span id="value1Text"></span>
+            </div>
+            
+            <div class="value-display value-bottom" id="value2">
+                <span id="value2Text"></span>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color slice-1"></div>
+                
+            </div>
+            <div class="legend-item">
+                <div class="legend-color slice-2"></div>
+                
+            </div>
+        </div>
+    </div>
+
+         </div>
+
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
