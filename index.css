@@ -92,7 +92,7 @@ body {
 
 
 .hero-section {
-  padding: 5rem 1rem;
+  padding: 2rem 0.5rem;
   text-align: center;
 }
 
@@ -498,6 +498,9 @@ input{
 .legend {
     display: flex;
     justify-content: cent
+}
+.porcent{ 
+  justify-self: center;
 }
 
 /* Responsividade (Responsiveness) */

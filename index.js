@@ -1,36 +1,42 @@
-  function salario() {
+
+function salario() {
     let salarioBruto = parseFloat(document.getElementById('income').value) || 0;
     let imposto = 0.0;
+    let porcentagem = 0.0 + "%";
 
-    if (salarioBruto <= 1903.98) {
-      imposto = 0.0; 
+    if (salarioBruto <= 2112.00) {
+      imposto = 0.0 ; porcentagem = 0.0;
     } else if (salarioBruto <= 2826.65) {
-      imposto = (salarioBruto - 1903.98) * 0.075;
+      imposto = (salarioBruto - 2112.00) * 0.075 ; porcentagem = 7.5;
     } else if (salarioBruto <= 3751.05) {
-      imposto = (2826.65 - 1903.98) * 0.075 + (salarioBruto - 2826.65) * 0.15;
+      imposto = (2826.65 - 2112.00) * 0.075 + (salarioBruto - 2826.65) * 0.15 ; porcentagem = 15 ;
     } else if (salarioBruto <= 4664.68) {
-      imposto = (2826.65 - 1903.98) * 0.075 +
+      imposto = (2826.65 - 2112.00) * 0.075 +
         (3751.05 - 2826.65) * 0.15 +
-        (salarioBruto - 3751.05) * 0.225;
+        (salarioBruto - 3751.05) * 0.225 ; porcentagem = 22.5;
     } else {
-      imposto = (2826.65 - 1903.98) * 0.075 +
+      imposto = (2826.65 - 2112.00) * 0.075 +
         (3751.05 - 2826.65) * 0.15 +
         (4664.68 - 3751.05) * 0.225 +
-        (salarioBruto - 4664.68) * 0.275;
+        (salarioBruto - 4664.68) * 0.275; porcentagem =   27.5 ;
     }
-
+    
+    
     let salarioLiquido = salarioBruto - imposto;
-
+    
     const data = [
       { label: 'Imposto', value: imposto, color: '#000000' },
-      { label: 'Salário Líquido', value: salarioLiquido, color: '#f6f4f4ff' }
+      { label: 'Salário Líquido', value: salarioLiquido, color: '#c9c8c8ff' }
     ];
-
+    
     const total = data.reduce((sum, item) => sum + item.value, 0);
-
+    
     createSlices(data, total);
     updateTotal(total);
     addEventListeners(data);
+
+    const porc = document.getElementById('change');
+    porc.innerHTML = `${porcentagem}%`;
   }
 
   function createSlices(data, total) {
