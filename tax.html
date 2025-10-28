@@ -12,11 +12,9 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-content">
-                 
                 <div class="logo">
-                    <h1>IMPOLiNE</h1>
+                    <a href="test.html"><h1>IMPOLINE</h1></a>
                 </div>
-   
                 <div class="nav-buttons">
                     <button class="btn btn-ghost">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -40,8 +38,6 @@
         </div>
     </nav>
 
-    
-
     <main>
         <section class="hero-section">
             <div class="hero-container">
@@ -51,31 +47,46 @@
         </section>
         
         <div class="grid">
-             <div class="exemplo4">
-    <h1 class="title-exemplo">Tax Calculation</h1>
-   <div class="cal">
-    <label for="income" class="label">Gross Income</label><br>
-    <input type="number" id="income" value="20000" class="input"/>
-                        <br>
-    <label for="deductions" class="labele">Deductions</label><br>
-    <input type="number" id="deductions" value="6000"  class="input1"/>
-   </div>
-    <button onclick="calculateTax()" class="buttonclas">Set Values</button>
-
-    </div>
+            <div class="exemplo4">
+                <h1 class="title-exemplo">Tax Calculation</h1>
+                <div class="cal">
+                    <label for="income" class="label">Gross Income</label><br>
+                    <input type="number" id="income" value="20000" class="input"/>
+                    <br>
+                </div>
+                <button onclick="calculateTax()" class="buttonclas">Set Values</button>
+            </div>
             
-         <div class="card-content">
-                <div class="chart-container">
+            <div class="card-content" style="position: relative;">
+                <div class="chart-container" style="position: relative;">
                     <svg class="donut-chart" width="300" height="300" viewBox="0 0 300 300">
                         <g class="chart-group" transform="translate(150,150)">
-                            <!-- Os segmentos serão criados dinamicamente pelo JavaScript -->
                         </g>
                         <text class="total-text" x="150" y="145" text-anchor="middle">Total</text>
-                        <text class="total-value" x="150" y="165" text-anchor="middle">1000</text>
+                        <text class="total-value" x="150" y="165" text-anchor="middle">100</text>
                     </svg>
-                </div>
 
+                    <!-- Container de informações do gráfico (aparece apenas no hover) -->
+                    <div id="chart-info" style="
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        background: #f3f3f3;
+                        padding: 10px 15px;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                        display: none;
+                        font-size: 14px;
+                        z-index: 10;
+                    ">
+                        <div id="contribution"></div>
+                        <div id="individual"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
     <script src="index.js"></script>
 </body>
 </html>
