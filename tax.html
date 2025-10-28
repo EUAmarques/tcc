@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPOLINE - Gestão Fiscal e Tributária</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+     
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                 
+                <div class="logo">
+                    <h1>IMPOLiNE</h1>
+                </div>
+   
+                <div class="nav-buttons">
+                    <button class="btn btn-ghost">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                            <polyline points="10,17 15,12 10,7"/>
+                            <line x1="15" y1="12" x2="3" y2="12"/>
+                        </svg>
+                        Login
+                    </button>
+                    <button class="btn btn-primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <line x1="19" y1="8" x2="19" y2="14"/>
+                            <line x1="22" y1="11" x2="16" y2="11"/>
+                        </svg>
+                        Cadastro
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <h1 class="hero-title">IMPOLINE</h1>
+                <p class="hero-subtitle">Sua solução completa para gestão fiscal e tributária</p>
+            </div>
+        </section>
+        
+        <div class="grid">
+             <div class="exemplo4">
+    <h1 class="title-exemplo">Tax Calculation</h1>
+   <div class="cal">
+    <label for="income" class="label">Gross Income</label><br>
+    <input type="number" id="income" value="20000" class="input"/>
+                        <br>
+    <label for="deductions" class="labele">Deductions</label><br>
+    <input type="number" id="deductions" value="6000"  class="input1"/>
+   </div>
+    <button onclick="calculateTax()" class="buttonclas">Set Values</button>
+
+    </div>
+            
+         <div class="card-content">
+                <div class="chart-container">
+                    <svg class="donut-chart" width="300" height="300" viewBox="0 0 300 300">
+                        <g class="chart-group" transform="translate(150,150)">
+                            <!-- Os segmentos serão criados dinamicamente pelo JavaScript -->
+                        </g>
+                        <text class="total-text" x="150" y="145" text-anchor="middle">Total</text>
+                        <text class="total-value" x="150" y="165" text-anchor="middle">1000</text>
+                    </svg>
+                </div>
+
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
