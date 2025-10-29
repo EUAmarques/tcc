@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Bot - IMPOLINE</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="index.html">
+            <h1>IMPOLINE</h1>
+          </a>
+        </div>
+        <div class="nav-buttons">
+         
+          <a href="login.html" class="btn btn-ghost">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+            </svg>
+            Login
+          </a>
+          <a href="cadastro.html" class="btn btn-primary">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+            </svg>
+            Cadastrar
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Chat Container -->
+  <div class="chat-container">
+    <div class="chat-wrapper">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <div class="chat-header-content">
+          <div class="bot-avatar">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="chat-header-info">
+            <h2 class="chat-header-title">Assistente IMPOLINE</h2>
+            <p class="chat-header-status">
+              <span class="status-indicator"></span>
+              Online - Pronto para ajudar
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Messages -->
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+          <div class="message-avatar">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="message-content">
+            <p>Olá! Sou o assistente virtual da IMPOLINE. Estou aqui para ajudar você a entender melhor sobre impostos e tributos. Como posso ajudar você hoje?</p>
+            <div class="quick-replies">
+              <button class="quick-reply-btn" onclick="sendQuickReply('O que é imposto de renda?')">O que é imposto de renda?</button>
+              <button class="quick-reply-btn" onclick="sendQuickReply('Como declarar impostos?')">Como declarar impostos?</button>
+              <button class="quick-reply-btn" onclick="sendQuickReply('Tipos de impostos')">Tipos de impostos</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="chat-input-container">
+        <form class="chat-input-form" id="chatForm" onsubmit="sendMessage(event)">
+          <input 
+            type="text" 
+            id="messageInput" 
+            class="chat-input" 
+            placeholder="Digite sua pergunta sobre impostos..."
+            autocomplete="off"
+          />
+          <button type="submit" class="chat-send-btn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
