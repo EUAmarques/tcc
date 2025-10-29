@@ -38,7 +38,7 @@
         </div>
     </nav>
 
-    <main>
+    <main class="main">
         <section class="hero-section">
             <div class="hero-container">
                 <h1 class="hero-title">IMPOLINE</h1>
@@ -50,13 +50,12 @@
             <div class="exemplo4">
                 <h1 class="title-exemplo">Tax Calculation</h1>
                 <div class="cal">
-                    <label for="income" class="label">Gross Income</label><br>
+                    <label for="income" class="label">Salario</label><br>
                     <input type="number" id="income" value="20000" class="input"/>
                     <br>
                 </div>
-                <button onclick="calculateTax()" class="buttonclas">Set Values</button>
+                <button onclick="calcularIR()" class="buttonclas">Set Values</button>
             </div>
-            
             <div class="card-content" style="position: relative;">
                 <div class="chart-container" style="position: relative;">
                     <svg class="donut-chart" width="300" height="300" viewBox="0 0 300 300">
@@ -66,7 +65,6 @@
                         <text class="total-value" x="150" y="165" text-anchor="middle">100</text>
                     </svg>
 
-                    <!-- Container de informações do gráfico (aparece apenas no hover) -->
                     <div id="chart-info" style="
                         position: absolute;
                         top: 10px;

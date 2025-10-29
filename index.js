@@ -1,8 +1,15 @@
+let salariolq = 1000;
+let ip = 1000;
+let data = [
+  { name: "Governo", value: ip, color: "#111213ff" },
+  { name: "Cliente", value: salariolq, color: "#e3e3e3ff" },
+];
+
 function calcularIR() {
-  const salario = parseFloat(document.getElementById('salario').value);
+  const salario = parseFloat(document.getElementById("income").value);
 
   if (isNaN(salario) || salario <= 0) {
-    alert("Digite um valor válido de salário!");
+    alert("Digite um salário válido!");
     return;
   }
 
@@ -26,29 +33,36 @@ function calcularIR() {
     parcelaDeduzir = 908.73;
   }
 
-  const imposto = Math.max((salario * aliquota) - parcelaDeduzir, 0);
+  const imposto = Math.max(salario * aliquota - parcelaDeduzir, 0);
   const salarioLiquido = salario - imposto;
 
-  document.getElementById('imposto').textContent = imposto.toFixed(2);
-  document.getElementById('liquido').textContent = salarioLiquido.toFixed(2);
-  document.getElementById('resultado').style.display = 'block';
-}
-let data = [
-  { name: "Governo", value: 400, color: "#111213ff" },
-  { name: "Cliente", value: 300, color: "#e3e3e3ff" },
-];
+  salariolq = salarioLiquido;
+  ip = imposto;
 
-// Referências ao container de informações
+  // ✅ Atualiza o array global
+  data = [
+    { name: "Governo", value: ip, color: "#111213ff" },
+    { name: "Cliente", value: salariolq, color: "#e3e3e3ff" },
+  ];
+
+  console.log("Novos dados:", data);
+
+  // ✅ Atualiza o gráfico depois do cálculo
+  renderChart();
+}
+
+// ================================================
+//  GRÁFICO
+// ================================================
+
 const chartInfo = document.getElementById("chart-info");
 const contributionDiv = document.getElementById("contribution");
 const individualDiv = document.getElementById("individual");
 
-// Função para calcular o total
 function getTotal() {
   return data.reduce((sum, item) => sum + item.value, 0);
 }
 
-// Função para criar um segmento do gráfico
 function createSegment(item, startAngle, endAngle, index) {
   const radius = 80;
   const innerRadius = 50;
@@ -83,40 +97,37 @@ function createSegment(item, startAngle, endAngle, index) {
   path.setAttribute("data-name", item.name);
   path.setAttribute("data-index", index);
 
-  // Eventos de hover
-  path.addEventListener('mouseenter', () => handleSegmentHover(path, true));
-  path.addEventListener('mouseleave', () => handleSegmentHover(path, false));
+  path.addEventListener("mouseenter", () => handleSegmentHover(path, true));
+  path.addEventListener("mouseleave", () => handleSegmentHover(path, false));
 
   return path;
 }
 
-// Função para lidar com o hover
 function handleSegmentHover(pathElement, isEntering) {
-    const index = parseInt(pathElement.getAttribute("data-index"));
-    const item = data[index];
-    const total = getTotal();
-    const percentage = ((item.value / total) * 100).toFixed(1);
+  const index = parseInt(pathElement.getAttribute("data-index"));
+  const item = data[index];
+  const total = getTotal();
+  const percentage = ((item.value / total) * 100).toFixed(1);
 
-    if (isEntering) {
-        if(item.name === "Governo") {
-            contributionDiv.textContent = `Parcela do governo: ${item.value} (${percentage}%)`;
-            individualDiv.textContent = '';
-        } else if(item.name === "Cliente") {
-            contributionDiv.textContent = '';
-            individualDiv.textContent = `Parcela do cliente: ${item.value} (${percentage}%)`;
-        }
-
-        chartInfo.style.display = "block";
-        pathElement.classList.add('hovered');
+  if (isEntering) {
+    if (item.name === "Governo") {
+      contributionDiv.textContent = `Parcela do governo: R$ ${item.value.toFixed(2)} (${percentage}%)`;
+      individualDiv.textContent = "";
     } else {
-        chartInfo.style.display = "none";
-        contributionDiv.textContent = '';
-        individualDiv.textContent = '';
-        pathElement.classList.remove('hovered');
+      contributionDiv.textContent = "";
+      individualDiv.textContent = `Parcela do cliente: R$ ${item.value.toFixed(2)} (${percentage}%)`;
     }
+
+    chartInfo.style.display = "block";
+    pathElement.classList.add("hovered");
+  } else {
+    chartInfo.style.display = "none";
+    contributionDiv.textContent = "";
+    individualDiv.textContent = "";
+    pathElement.classList.remove("hovered");
+  }
 }
 
-// Função para renderizar o gráfico
 function renderChart() {
   const chartGroup = document.querySelector(".chart-group");
   const totalValue = document.querySelector(".total-value");
@@ -124,10 +135,13 @@ function renderChart() {
   if (!chartGroup || !totalValue) return;
 
   chartGroup.innerHTML = "";
-  const total = getTotal();
-  totalValue.textContent = total;
 
-  let currentAngle = -90; // Começar do topo
+  const total = getTotal();
+  if (total <= 0) return; // 🔒 evita NaN
+
+  totalValue.textContent = `R$ ${total.toFixed(2)}`;
+
+  let currentAngle = -90;
 
   data.forEach((item, index) => {
     const percentage = item.value / total;
@@ -141,7 +155,6 @@ function renderChart() {
   });
 }
 
-// Inicializar o gráfico
 document.addEventListener("DOMContentLoaded", () => {
   renderChart();
 });
