@@ -16,14 +16,20 @@
           </a>
         </div>
         <div class="nav-buttons">
-         
-          <a href="login.html" class="btn btn-ghost">
+          <!-- Botão de logout para usuários logados -->
+          <button class="btn btn-ghost" onclick="handleLogout()" id="logoutBtn" style="display: none;">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            Sair
+          </button>
+          <a href="login.html" class="btn btn-ghost" id="loginBtn">
             <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
             </svg>
             Login
           </a>
-          <a href="cadastro.html" class="btn btn-primary">
+          <a href="cadastro.html" class="btn btn-primary" id="cadastroBtn">
             <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
             </svg>
@@ -47,7 +53,7 @@
             <h2 class="chat-header-title">Assistente IMPOLINE</h2>
             <p class="chat-header-status">
               <span class="status-indicator"></span>
-              Online - Pronto para ajudar
+              <span id="userGreeting">Online - Pronto para ajudar</span>
             </p>
           </div>
         </div>
@@ -61,7 +67,7 @@
             </svg>
           </div>
           <div class="message-content">
-            <p>Olá! Sou o assistente virtual da IMPOLINE. Estou aqui para ajudar você a entender melhor sobre impostos e tributos. Como posso ajudar você hoje?</p>
+            <p id="welcomeMessage">Olá! Sou o assistente virtual da IMPOLINE. Estou aqui para ajudar você a entender melhor sobre impostos e tributos. Como posso ajudar você hoje?</p>
             <div class="quick-replies">
               <button class="quick-reply-btn" onclick="sendQuickReply('O que é imposto de renda?')">O que é imposto de renda?</button>
               <button class="quick-reply-btn" onclick="sendQuickReply('Como declarar impostos?')">Como declarar impostos?</button>
@@ -90,6 +96,39 @@
     </div>
   </div>
 
+  <!-- Sistema de autenticação simples com localStorage -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      console.log("[v0] Verificando autenticação no chatbot.html");
+      const loggedUser = localStorage.getItem('impoline_logged_user');
+      console.log("[v0] Usuário logado:", loggedUser);
+      
+      // Se não estiver logado, redirecionar para login
+      if (!loggedUser) {
+        alert('Você precisa fazer login para acessar o chatbot!');
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      console.log("[v0] Usuário autenticado, carregando chatbot");
+      
+      // Atualizar UI para usuário logado
+      document.getElementById('userGreeting').textContent = `Olá, ${loggedUser}!`;
+      document.getElementById('welcomeMessage').textContent = `Olá, ${loggedUser}! Sou o assistente virtual da IMPOLINE. Estou aqui para ajudar você a entender melhor sobre impostos e tributos. Como posso ajudar você hoje?`;
+      
+      // Mostrar botão de logout, esconder login/cadastro
+      document.getElementById('logoutBtn').style.display = 'flex';
+      document.getElementById('loginBtn').style.display = 'none';
+      document.getElementById('cadastroBtn').style.display = 'none';
+    });
+    
+    // Função de logout
+    function handleLogout() {
+      localStorage.removeItem('impoline_logged_user');
+      alert('Você saiu da sua conta!');
+      window.location.href = 'test.html';
+    }
+  </script>
   <script src="chatbot.js"></script>
 </body>
 </html>

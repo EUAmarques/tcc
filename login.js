@@ -1,18 +1,26 @@
-   let namelogin = null
-   let passwordlogin = null
+async function handleLogin() {
+  const namelogin = document.getElementById("namelogin").value
+  const passwordlogin = document.getElementById("passwordlogin").value
 
-   function handleLogin() {
+  // Validate inputs
+  if (!namelogin || !passwordlogin) {
+    alert("Por favor, preencha todos os campos!")
+    return
+  }
 
-    namelogin = document.getElementById('namelogin').value;
-    passwordlogin = document.getElementById('passwordlogin').value
+  // Buscar usuários do localStorage
+  const users = JSON.parse(localStorage.getItem("impoline_users")) || []
 
-    if(!namelogin || !passwordlogin){
-        alert('preenchao canpo')
-    }else{
-       namelogin = document.getElementById('namelogin').value;
-       passwordlogin = document.getElementById('passwordlogin').value;
-            
-       console.log('Login:', { namelogin, passwordlogin });
-       alert('Funcionalidade de login será implementada em breve!');
-        }
-    }
+  // Verificar se usuário existe e senha está correta
+  const user = users.find((u) => u.name === namelogin && u.password === passwordlogin)
+
+  if (!user) {
+    alert("Nome de usuário ou senha incorretos!")
+    return
+  }
+
+  localStorage.setItem("impoline_logged_user", namelogin)
+
+  alert("Login realizado com sucesso! Bem-vindo de volta!")
+  window.location.href = "test.html"
+}

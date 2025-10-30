@@ -26,8 +26,8 @@
                             <line x1="15" y1="12" x2="3" y2="12"/>
                         </svg>
                         Login
-                    </button>
-                    <button class="btn btn-primary"></a>
+                    </button></a>
+                    <a href="cadastro.html"><button class="btn btn-primary">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
                             <circle cx="9" cy="7" r="4"/>
@@ -35,7 +35,7 @@
                             <line x1="22" y1="11" x2="16" y2="11"/>
                         </svg>
                         Cadastro
-                    </button>
+                    </button></a>
                 </div>
             </div>
         </div>
@@ -97,8 +97,9 @@
                         </a>
                     </div>
 
+                    <!-- Verificação de autenticação antes de acessar o chatbot -->
                     <div class="feature-card">
-                        <a href="chatbot.html">
+                        <a href="cha" onclick="checkAuthAndRedirect(event)">
                         <div class="feature-header">
                             <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -134,9 +135,9 @@
                     <div class="stat">
                         <div class="stat-number">EMAIL</div>
                         <div class="stat-label">
-                            exemplo@gmail.com 
-                        <br>exemplo2@gmail.com 
-                        <br>exemplo3@gmail.com
+                          miranda@gmail.com
+                        <br>bruno@gmail.com 
+                        <br>marques@gmail.com
                         </div>
                     </div>
                     <div class="stat">
@@ -148,12 +149,26 @@
                         </div>
                      </div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">OUTRAS OPIÇÃO</div>
-                        <div class="stat-label">........</div>
-                    </div>
+                    
                 </div>
             </div>
     </main>
+
+    <!-- Sistema de autenticação simples com localStorage -->
+    <script>
+      // Verificar autenticação antes de redirecionar para o chatbot
+      function checkAuthAndRedirect(event) {
+        event.preventDefault();
+        
+        const loggedUser = localStorage.getItem('impoline_logged_user');
+        
+        if (!loggedUser) {
+          alert('Você precisa estar logado para acessar o chatbot! Por favor, faça login ou cadastre-se.');
+          window.location.href = 'login.html';
+        } else {
+          window.location.href = 'chatbot.html';
+        }
+      }
+    </script>
 </body>
 </html>

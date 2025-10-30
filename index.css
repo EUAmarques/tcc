@@ -856,13 +856,20 @@ a{
   border: solid 2px black;
   border-radius: 10px;
 }
+.center-item{
+  
+
+  align-items: center;
+  text-align: center;
+
+}
 
 .exemplo4 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin:  4rem;
+  margin:  4rem ;
 }
 
 .title-exemplo {
