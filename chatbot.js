@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageInput = document.getElementById("messageInput");
   const messagesContainer = document.getElementById("chatMessages");
 
-  // Base de conhecimento
   const knowledgeBase = {
     "imposto de renda": {
       keywords: ["imposto de renda", "ir", "irpf", "declaração"],
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const message = messageInput.value.trim();
     if (!message) return;
 
-    addMessage(message, true); // mensagem do usuário
+    addMessage(message, true); 
     messageInput.value = "";
 
     showTypingIndicator();
@@ -108,12 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
       removeTypingIndicator();
       const botReply = findResponse(message);
       addMessage(botReply, false);
-    }, 800); // simula digitação
+    }, 800); 
   }
 
   chatForm.addEventListener("submit", sendMessage);
 
-  // Função para quick replies
+ 
   window.sendQuickReply = function (text) {
     messageInput.value = text;
     sendMessage();

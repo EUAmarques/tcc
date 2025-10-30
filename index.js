@@ -39,7 +39,6 @@ function calcularIR() {
   salariolq = salarioLiquido;
   ip = imposto;
 
-  // ✅ Atualiza o array global
   data = [
     { name: "Governo", value: ip, color: "#111213ff" },
     { name: "Cliente", value: salariolq, color: "#e3e3e3ff" },
@@ -47,13 +46,9 @@ function calcularIR() {
 
   console.log("Novos dados:", data);
 
-  // ✅ Atualiza o gráfico depois do cálculo
   renderChart();
 }
 
-// ================================================
-//  GRÁFICO
-// ================================================
 
 const chartInfo = document.getElementById("chart-info");
 const contributionDiv = document.getElementById("contribution");
@@ -137,7 +132,7 @@ function renderChart() {
   chartGroup.innerHTML = "";
 
   const total = getTotal();
-  if (total <= 0) return; // 🔒 evita NaN
+  if (total <= 0) return; 
 
   totalValue.textContent = `R$ ${total.toFixed(2)}`;
 

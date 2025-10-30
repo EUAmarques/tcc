@@ -8,16 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-content">
-                <!-- Logo -->
                 <div class="logo">
                     <a href="test.html"><h1>IMPOLINE</h1></a>
                 </div>
 
-                <!-- Login/Cadastro -->
                 <div class="nav-buttons">
                     <a href="login.html" class="btn btn-ghost">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -42,7 +39,6 @@
     </nav>
 
     <main>
-        <!-- Cadastro Form Section -->
         <section class="auth-section">
             <div class="auth-container">
                 <div class="auth-card">
@@ -51,7 +47,6 @@
                         <p class="auth-subtitle">Preencha os dados abaixo para começar</p>
                     </div>
 
-                    <form class="auth-form" onsubmit="handleRegister(event)">
                         <div class="form-group">
                             <label for="name" class="form-label">Nome completo</label>
                             <input 
@@ -64,20 +59,7 @@
                             >
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                class="form-input" 
-                                placeholder="seu@email.com"
-                                required
-                            >
-                        </div>
-
-                        
-
+                 
                         <div class="form-group">
                             <label for="password" class="form-label">Senha</label>
                             <input 
@@ -111,10 +93,10 @@
                             </label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-full">
+                        <button type="submit" class="btn btn-primary btn-full" onclick="handleRegister()">
                             Criar conta
                         </button>
-                    </form>
+                    
 
                     <div class="auth-footer">
                         <p class="auth-footer-text">
@@ -127,24 +109,6 @@
         </section>
     </main>
 
-    <script>
-        function handleRegister(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const company = document.getElementById('company').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-            
-            if (password !== confirmPassword) {
-                alert('As senhas não coincidem!');
-                return;
-            }
-            
-            // Aqui você adicionaria a lógica de cadastro
-            console.log('Cadastro:', { name, email, company, password });
-            alert('Funcionalidade de cadastro será implementada em breve!');
-        }
-    </script>
+    <script src="cadastro.js"></script>
 </body>
 </html>
