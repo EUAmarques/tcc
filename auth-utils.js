@@ -1,6 +1,3 @@
-// Authentication utilities
-
-// Save user session to localStorage
 function saveUserSession(user) {
   localStorage.setItem(
     "impoline_user",
@@ -13,17 +10,15 @@ function saveUserSession(user) {
   )
 }
 
-// Get current user session
 function getUserSession() {
   const userStr = localStorage.getItem("impoline_user")
   if (!userStr) return null
 
   try {
     const user = JSON.parse(userStr)
-    // Check if session is still valid (24 hours)
     const now = new Date().getTime()
     const sessionAge = now - user.timestamp
-    const maxAge = 24 * 60 * 60 * 1000 // 24 hours
+    const maxAge = 24 * 60 * 60 * 1000 
 
     if (sessionAge > maxAge) {
       clearUserSession()
@@ -37,17 +32,14 @@ function getUserSession() {
   }
 }
 
-// Clear user session
 function clearUserSession() {
   localStorage.removeItem("impoline_user")
 }
 
-// Check if user is logged in
 function isUserLoggedIn() {
   return getUserSession() !== null
 }
 
-// Redirect to login if not authenticated
 function requireAuth() {
   if (!isUserLoggedIn()) {
     alert("Você precisa estar logado para acessar esta página!")
@@ -57,7 +49,6 @@ function requireAuth() {
   return true
 }
 
-// Hash password (simple hash for demonstration - in production use bcrypt on server)
 async function hashPassword(password) {
   const encoder = new TextEncoder()
   const data = encoder.encode(password)

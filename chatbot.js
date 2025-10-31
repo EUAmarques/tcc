@@ -5,24 +5,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const knowledgeBase = {
     "imposto de renda": {
-      keywords: ["imposto de renda", "ir", "irpf", "declaração"],
+      keywords: ["imposto de renda", "ir", "irpf", "declaração", "imposto rend"],
       response:
-        "O Imposto de Renda é um tributo federal cobrado anualmente sobre os rendimentos de pessoas físicas e jurídicas. Para pessoas físicas, é obrigatório declarar se você recebeu rendimentos tributáveis acima de R$ 28.559,70 no ano anterior, possui bens acima de R$ 300 mil, ou se enquadra em outras condições específicas.",
+        "O Imposto de Renda é um tributo federal cobrado anualmente sobre rendimentos. Pessoas físicas devem declarar se ultrapassarem limites da Receita ou possuírem bens acima de certos valores.",
     },
     "tipos de impostos": {
-      keywords: ["tipos", "quais impostos", "impostos existem", "categorias"],
+      keywords: ["tipos", "quais impostos", "impostos existem", "categorias", "tipos de imposto"],
       response:
-        "No Brasil, existem diversos tipos de impostos:\n\n• Impostos Federais: IR, IPI, IOF, CSLL, PIS, COFINS\n• Impostos Estaduais: ICMS, IPVA, ITCMD\n• Impostos Municipais: IPTU, ISS, ITBI\n\nCada um tem suas características e incide sobre diferentes atividades econômicas.",
+        "No Brasil existem impostos federais, estaduais e municipais. Exemplos: IR, IPI, IOF, ICMS, IPVA, IPTU, ISS. Cada um tem regras e base de cálculo próprias.",
     },
     "como declarar": {
-      keywords: ["como declarar", "declarar impostos", "fazer declaração", "declarar ir"],
+      keywords: ["como declarar", "declarar impostos", "fazer declaração", "declarar ir", "declaro"],
       response:
-        "Para declarar o Imposto de Renda:\n\n1. Baixe o programa da Receita Federal ou use o aplicativo\n2. Reúna seus documentos (informes de rendimentos, recibos, etc.)\n3. Preencha os dados pessoais e rendimentos\n4. Informe deduções permitidas (saúde, educação, dependentes)\n5. Revise e envie a declaração\n6. Guarde o recibo de entrega\n\nO prazo geralmente é de março a maio de cada ano.",
+        "Para declarar IR: baixe o programa/app da Receita, reúna informes de rendimento e comprovantes, preencha rendimentos e deduções, revise e envie. Guarde o recibo.",
     },
     "saudacoes": {
-      keywords: ["oi", "olá", "ola", "boa tarde", "bom dia", "boa noite"],
+      keywords: ["oi", "olá", "ola", "boa tarde", "bom dia", "boa noite", "e aí"],
       response:
-        "Olá! 👋 Eu sou o assistente virtual da IMPOLINE. Posso ajudar você com informações sobre impostos, prazos, deduções e muito mais. Sobre o que você quer aprender primeiro?",
+        "Olá! 👋 Sou o assistente da IMPOLINE. Posso ajudar com prazos, deduções, tipos de imposto e dúvidas sobre declaração. Sobre o que quer saber?",
+    },
+    "deducoes": {
+      keywords: ["dedução", "deducoes", "deduzir", "despesas dedutíveis", "desconto"],
+      response:
+        "Deduções comuns: despesas médicas, educação (limitadas), dependentes, contribuição à previdência oficial. Guarde recibos e notas fiscais para comprovação.",
+    },
+    "prazo": {
+      keywords: ["prazo", "data", "quando declarar", "vencimento", "entrega"],
+      response:
+        "O período de entrega geralmente ocorre entre março e abril/maio (varia por ano). Consulte o calendário da Receita Federal no ano corrente.",
+    },
+    "multas": {
+      keywords: ["multa", "penalidade", "multa por atraso", "atraso declaração"],
+      response:
+        "A entrega fora do prazo pode gerar multa. Há também juros sobre impostos devidos não pagos. Verifique valores e condições no site da Receita.",
+    },
+    "mei_simples": {
+      keywords: ["mei", "simples nacional", "simples", "microempreendedor"],
+      response:
+        "MEI e empresas no Simples têm regras diferentes do IRPF. MEI faz declaração anual do faturamento (DASN-SIMEI) e pode ter guia DAS mensal.",
+    },
+    "restituicao": {
+      keywords: ["restituição", "restituicao", "receber imposto", "restituir"],
+      response:
+        "Se você pagou mais imposto do que devia, pode ter direito à restituição. A Receita publica lotes de restituição aos contribuintes elegíveis.",
+    },
+    "documentos": {
+      keywords: ["documentos", "comprovantes", "informes", "recibos", "notas fiscais"],
+      response:
+        "Reúna informes de rendimento (bancos, empregadores), recibos de despesas médicas, comprovantes de educação, documentos de bens e imóveis.",
+    },
+    "consulta": {
+      keywords: ["consultar", "status", "acompanhar declaração", "consulta recibo"],
+      response:
+        "Você pode consultar o status da declaração e recibo no site e no app da Receita Federal usando CPF e código de acesso ou gov.br.",
+    },
+    "parcelamento": {
+      keywords: ["parcelamento", "parcelar", "parcela imposto", "parcelas"],
+      response:
+        "Imposto devido pode, em alguns casos, ser parcelado pela Receita. Consulte opções de parcelamento e condições no portal da Receita Federal.",
+    },
+    "isenção": {
+      keywords: ["isenção", "isento", "isento imposto", "isencao"],
+      response:
+        "Há situações de isenção (por exemplo rendimentos abaixo do limite). Verifique as regras específicas para cada ano e tipo de rendimento.",
+    },
+    "atendimento": {
+      keywords: ["ajuda", "contato", "telefone", "atendimento", "suporte"],
+      response:
+        "Para atendimento oficial, use os canais da Receita Federal ou o portal gov.br. Posso fornecer orientações gerais, não substituo atendimento oficial.",
+    },
+    "fallback": {
+      keywords: ["imposto", "renda", "declar", "restitu", "prazo", "deduç", "document"],
+      response:
+        "Desculpe, não entendi exatamente. Pode reformular? Você pode perguntar sobre: Imposto de Renda, prazos, deduções, documentos ou restituição.",
     },
   };
 

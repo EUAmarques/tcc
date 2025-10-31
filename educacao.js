@@ -21,3 +21,29 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 })
+window.addEventListener('DOMContentLoaded', function() {
+  const loggedUser = localStorage.getItem('impoline_logged_user');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const loginBtn = document.querySelector('a[href="login.html"]');
+  const cadastroBtn = document.querySelector('a[href="cadastro.html"]');
+
+  if (!logoutBtn || !loginBtn || !cadastroBtn) return;
+
+  if (loggedUser) {
+   
+    logoutBtn.style.display = 'flex';
+    loginBtn.style.display = 'none';
+    cadastroBtn.style.display = 'none';
+  } else {
+    logoutBtn.style.display = 'none';
+    loginBtn.style.display = 'flex';
+    cadastroBtn.style.display = 'flex';
+  }
+
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('impoline_logged_user');
+    alert('Você saiu da sua conta!');
+    window.location.reload();
+  });
+});
+

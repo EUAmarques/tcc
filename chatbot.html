@@ -16,7 +16,6 @@
           </a>
         </div>
         <div class="nav-buttons">
-          <!-- Botão de logout para usuários logados -->
           <button class="btn btn-ghost" onclick="handleLogout()" id="logoutBtn" style="display: none;">
             <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -40,14 +39,15 @@
     </div>
   </nav>
 
+  <div class="conradoavatar">
+  <img src="WhatsApp_Image_2025-10-27_at_09.51.14-removebg-preview.png" alt="..." class="conrado">
+  </div>
   <div class="chat-container">
     <div class="chat-wrapper">
       <div class="chat-header">
         <div class="chat-header-content">
           <div class="bot-avatar">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
+            <img src="Sem título.png" alt="Avatar do assistente" class="bot-img">
           </div>
           <div class="chat-header-info">
             <h2 class="chat-header-title">Assistente IMPOLINE</h2>
@@ -63,7 +63,7 @@
         <div class="message bot-message">
           <div class="message-avatar">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <img src="conrado.png" alt="Avatar do assistente" class="bot-img">
             </svg>
           </div>
           <div class="message-content">
@@ -96,14 +96,12 @@
     </div>
   </div>
 
-  <!-- Sistema de autenticação simples com localStorage -->
   <script>
     window.addEventListener('DOMContentLoaded', function() {
       console.log("[v0] Verificando autenticação no chatbot.html");
       const loggedUser = localStorage.getItem('impoline_logged_user');
       console.log("[v0] Usuário logado:", loggedUser);
       
-      // Se não estiver logado, redirecionar para login
       if (!loggedUser) {
         alert('Você precisa fazer login para acessar o chatbot!');
         window.location.href = 'login.html';
@@ -112,17 +110,14 @@
       
       console.log("[v0] Usuário autenticado, carregando chatbot");
       
-      // Atualizar UI para usuário logado
       document.getElementById('userGreeting').textContent = `Olá, ${loggedUser}!`;
       document.getElementById('welcomeMessage').textContent = `Olá, ${loggedUser}! Sou o assistente virtual da IMPOLINE. Estou aqui para ajudar você a entender melhor sobre impostos e tributos. Como posso ajudar você hoje?`;
       
-      // Mostrar botão de logout, esconder login/cadastro
       document.getElementById('logoutBtn').style.display = 'flex';
       document.getElementById('loginBtn').style.display = 'none';
       document.getElementById('cadastroBtn').style.display = 'none';
     });
     
-    // Função de logout
     function handleLogout() {
       localStorage.removeItem('impoline_logged_user');
       alert('Você saiu da sua conta!');

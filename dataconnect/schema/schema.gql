@@ -1,0 +1,52 @@
+type User @table {
+  displayName: String!
+  email: String
+  photoUrl: String
+  createdAt: Timestamp!
+}
+
+type ClothingItem @table {
+  user: User!
+  name: String!
+  category: String!
+  brand: String
+  color: String
+  size: String
+  imageUrl: String
+  season: String
+  notes: String
+  createdAt: Timestamp!
+}
+
+type Outfit @table {
+  user: User!
+  name: String!
+  description: String
+  imageUrl: String
+  createdAt: Timestamp!
+}
+
+type OutfitItem @table(key: ["outfit", "clothingItem"]) {
+  outfit: Outfit!
+  clothingItem: ClothingItem!
+  notes: String
+  createdAt: Timestamp!
+}
+
+type CalendarEvent @table {
+  user: User!
+  name: String!
+  description: String
+  eventDate: Date!
+  location: String
+  plannedOutfit: Outfit
+  createdAt: Timestamp!
+}
+
+type WearHistory @table {
+  user: User!
+  clothingItem: ClothingItem
+  outfit: Outfit
+  wornDate: Date!
+  createdAt: Timestamp!
+}

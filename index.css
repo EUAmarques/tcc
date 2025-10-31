@@ -1042,6 +1042,21 @@ a{
   justify-content: center;
   padding: 2rem 1rem;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, rgba(248, 250, 252, 0.5) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.conradoavatar {
+  top: 130px;
+  position: absolute;
+  z-index: 0; 
+}
+
+@media (max-width: 1200px) {
+  .conradoavatar {
+   display: none
+   ;
+  }
 }
 
 .chat-wrapper {
@@ -1096,7 +1111,16 @@ a{
   color: white;
   margin-bottom: 0.25rem;
 }
-
+.link-class{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.a-link{
+  margin-left: 0.5rem;
+  text-decoration: underline;
+}
 .chat-header-status {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.9);
@@ -1176,6 +1200,11 @@ a{
 
 .user-message .message-avatar {
   background-color: #64748b;
+}
+
+.conrado{
+  display: flexbox;
+  left: 20rem; 
 }
 
 .user-message .message-avatar svg {
@@ -1380,5 +1409,12 @@ a{
     width: 100%;
     text-align: left;
   }
+}
+
+.bot-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: black;
 }
 
