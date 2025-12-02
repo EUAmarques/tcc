@@ -47,3 +47,9 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.querySelectorAll(".tax-card").forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("active");
+  });
+});
+

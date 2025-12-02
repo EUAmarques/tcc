@@ -46,6 +46,10 @@ function calcularIR() {
 
   console.log("Novos dados:", data);
 
+  document.getElementById("valor-imposto").textContent = imposto.toFixed(2);
+  document.getElementById("valor-liquido").textContent = salarioLiquido.toFixed(2);
+
+
   renderChart();
 }
 
@@ -149,6 +153,7 @@ function renderChart() {
     currentAngle = endAngle;
   });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   renderChart();

@@ -47,21 +47,29 @@
     <main class="main">
         <section class="hero-section">
             <div class="hero-container">
-                <h1 class="hero-title">IMPOLINE</h1>
-                <p class="hero-subtitle">Sua solução completa para gestão fiscal e tributária</p>
+                <p class="hero-subtitle">Taxa estimada do Imposto de Renda</p>
+                <p class="hero-subtitle">Essa área é demonstrativa e calcula as taxas de <strong>IRPF</strong> e pode conter erros </p>
             </div>
         </section>
         
         <div class="grid">
-            <div class="exemplo4">
+           <div class="exemplo4">
                 <h1 class="title-exemplo">Tax Calculation</h1>
-                <div class="cal">
-                    <label for="income" class="label">Salario</label><br>
-                    <input type="number" id="income" value="20000" class="input"/>
-                    <br>
-                </div>
-                <button onclick="calcularIR()" class="buttonclas">Set Values</button>
-            </div>
+             <div class="cal">
+                   <label for="income" class="label">Salário</label><br>
+                   <input type="number" id="income" value="20000" class="input"/>
+                 <br>
+        </div>
+
+    <button onclick="calcularIR()" class="buttonclas">Calcular</button>
+
+    <!-- 🔽 NOVAS INFORMAÇÕES AQUI -->
+    <div id="resultado" class="resultado-info" style="margin-top: 1rem; text-align: center;">
+        <p><strong>Parcela do Governo:</strong> R$ <span id="valor-imposto">0.00</span></p>
+        <p><strong>Salário Líquido:</strong> R$ <span id="valor-liquido">0.00</span></p>
+    </div>
+</div>
+
             <div class="card-content" style="position: relative;">
                 <div class="chart-container" style="position: relative;">
                     <svg class="donut-chart" width="300" height="300" viewBox="0 0 300 300">
@@ -91,6 +99,11 @@
         </div>
         <div class="link-class">Avaliamos o nosso site em 
              <a href="https://docs.google.com/forms/d/e/1FAIpQLSds_pT8Vty14myGLt6-aQda2JNhBUhdgU-Pa0JHh2JeTjHMIw/viewform?usp=header" class="a-link">AQUI</a> 
+        </div>
+        <div class="warning">
+             <h3>⚠️ AVISO  Importante</h3>
+            <p><strong>Os cálculos apresentados neste site têm caráter meramente estimativo e baseiam-se em deduções automáticas. Apesar de buscarmos oferecer informações precisas e atualizadas</strong> </p>
+
         </div>
     </main>
     

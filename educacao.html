@@ -18,17 +18,19 @@
           </div>
           <div class="nav-buttons">
              <button class="btn btn-ghost" onclick="handleLogout()" id="logoutBtn" style="display: none;">
-            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            </svg>
-            Sair
-          </button>
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Sair
+              </button>
+
             <a href="login.html" class="btn btn-ghost">
               <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
               </svg>
               Login
             </a>
+
             <a href="cadastro.html" class="btn btn-primary">
               <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -44,239 +46,364 @@
       <aside class="education-sidebar">
         <h2 class="sidebar-title">Conteúdo Educativo</h2>
         <nav class="sidebar-nav">
-          <button class="sidebar-item active" data-content="introducao">
-            <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Introdução aos Impostos
-          </button>
-          <button class="sidebar-item" data-content="tipos">
-            <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
-            Tipos de Impostos
-          </button>
-          <button class="sidebar-item" data-content="declaracao">
-            <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Como Declarar
-          </button>
-          <button class="sidebar-item" data-content="dicas">
-            <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-            Dicas e Estratégias
-          </button>
-          <button class="sidebar-item" data-content="perguntas">
-            <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Perguntas Frequentes
-          </button>
-          <button class="sidebar-item" data-content="tabela">
-           <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-           </svg>
-             Tabela de Nomes
-           </button>
-
+          <button class="sidebar-item active" data-content="introducao">Introdução aos Impostos</button>
+          <button class="sidebar-item" data-content="tipos">Tipos de Impostos</button>
+          <button class="sidebar-item" data-content="declaracao">Como Declarar</button>
+          <button class="sidebar-item" data-content="dicas">Dicas e Estratégias</button>
+          <button class="sidebar-item" data-content="perguntas">Perguntas Frequentes</button>
+          <button class="sidebar-item" data-content="tabela">Tabela IRPF</button>
         </nav>
       </aside>
 
       <main class="education-content">
+
+        <!-- INTRODUÇÃO -->
         <div id="introducao" class="content-section active">
           <h1 class="content-title">Introdução aos Impostos</h1>
-          <div class="content-body">
-            <p>Os impostos são contribuições obrigatórias cobradas pelo governo para financiar serviços públicos e infraestrutura. Entender como funcionam é essencial para uma gestão financeira eficiente.</p>
-            
-            <h3>O que são impostos?</h3>
-            <p>Impostos são valores pagos por pessoas físicas e jurídicas ao governo, sem contrapartida direta. Eles são utilizados para financiar educação, saúde, segurança, infraestrutura e outros serviços públicos.</p>
-            
-            <h3>Por que pagar impostos?</h3>
-            <ul>
-              <li><strong>Financiamento de serviços públicos:</strong> Hospitais, escolas, estradas e segurança</li>
-              <li><strong>Redistribuição de renda:</strong> Programas sociais e assistência</li>
-              <li><strong>Desenvolvimento econômico:</strong> Investimentos em infraestrutura</li>
-              <li><strong>Obrigação legal:</strong> Evitar multas e penalidades</li>
-            </ul>
+          <p>Os impostos são taxas obrigatórias cobradas pelo governo para financiar serviços públicos.</p>
 
-            <div class="info-box">
-              <h4>Importante!</h4>
-              <p>O não pagamento de impostos pode resultar em multas, juros e até processos criminais. Mantenha-se sempre em dia com suas obrigações fiscais.</p>
-            </div>
+          <div class="info-box">
+            <h4>Importante!</h4>
+            <p>O não pagamento de impostos pode gerar multas, juros e processos.</p>
           </div>
         </div>
 
+        <!-- TIPOS DE IMPOSTOS -->
         <div id="tipos" class="content-section">
           <h1 class="content-title">Tipos de Impostos</h1>
-          <div class="content-body">
-            <p>No Brasil, existem diversos tipos de impostos cobrados em diferentes níveis governamentais. Conheça os principais:</p>
-            
-            <h3>Impostos Federais</h3>
-            <div class="tax-card">
+          <p>No Brasil, existem três níveis principais: federal, estadual e municipal.</p>
+
+          <!-- CARD 1 -->
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
               <h4>Imposto de Renda (IR)</h4>
-              <p>Cobrado sobre rendimentos de pessoas físicas e jurídicas. Alíquotas variam de acordo com a faixa de renda.</p>
+              <span class="arrow">▼</span>
             </div>
-            
-            <div class="tax-card">
-              <h4>IPI - Imposto sobre Produtos Industrializados</h4>
-              <p>Incide sobre produtos industrializados, nacionais ou importados.</p>
-            </div>
+            <p>Cobrado sobre rendimentos.</p>
 
-            <h3>Impostos Estaduais</h3>
-            <div class="tax-card">
-              <h4>ICMS - Imposto sobre Circulação de Mercadorias e Serviços</h4>
-              <p>Principal imposto estadual, incide sobre a circulação de mercadorias e alguns serviços.</p>
-            </div>
-
-            <h3>Impostos Municipais</h3>
-            <div class="tax-card">
-              <h4>IPTU - Imposto Predial e Territorial Urbano</h4>
-              <p>Cobrado anualmente sobre propriedades urbanas.</p>
-            </div>
-            
-            <div class="tax-card">
-              <h4>ISS - Imposto sobre Serviços</h4>
-              <p>Incide sobre a prestação de serviços.</p>
+            <div class="tax-details">
+              <p><h4>O que é o Imposto de Renda (IR)</h4> O Imposto de Renda é um tributo federal cobrado anualmente sobre os ganhos financeiros das pessoas físicas e jurídicas no Brasil. Ele mede quanto cada pessoa ganhou no ano e quanto deve pagar de imposto sobre esses rendimentos.
+<h4>Para que serve o IR</h4> O dinheiro arrecadado é utilizado pelo governo para financiar áreas essenciais, como: - Saúde - Educação - Segurança pública - Programas sociais - Infraestrutura e obras públicas
+<h4>Quem precisa declarar o Imposto de Renda</h4> Deve declarar quem: - Recebeu rendimentos tributáveis acima do limite anual definido pela Receita Federal. - Teve ganhos com venda de bens, como imóveis ou ações. - Possui bens cujo valor ultrapassa o limite exigido. - Investiu na bolsa de valores. - Recebeu rendimentos isentos ou tributados na fonte acima do limite anual.
+<h4>Como o IR é calculado</h4> A tributação é feita por meio de uma tabela progressiva. Quem ganha menos paga menos; quem ganha mais paga mais. As alíquotas variam de 0% a 27,5%, dependendo da faixa de renda.
+<h4>Quando declarar</h4> O período de entrega da declaração geralmente ocorre entre março e maio de cada ano, sempre informando os rendimentos do ano anterior.
+<h4>Restituição</h4> Se a pessoa pagou mais imposto do que deveria, recebe parte do dinheiro de volta como restituição. Caso tenha pago menos, será necessário quitar a diferença.
+<h4>O que deve constar na declaração</h4> A declaração deve incluir: - Rendimentos (salário, aluguéis, pensões, serviços) - Bens (casas, carros, investimentos) - Dívidas - Dependentes - Gastos dedutíveis (saúde, educação, previdência)
+<h4>Consequências de não declarar</h4> Quem não entrega pode: - Receber multa - Ter o CPF irregular - Enfrentar dificuldades para financiamentos - Ter problemas com passaporte - Cair na malha fina
+<h4>Tipos de declaração</h4> <h5>Declaração Completa</h5> Adequada para quem possui muitas despesas dedutíveis, como gastos com dependentes, saúde e educação. <h5>Declaração Simplificada</h5> Oferece um desconto padrão de 20% sobre os rendimentos. Ideal para quem tem poucas despesas dedutíveis.</p>
             </div>
           </div>
-        </div>
 
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>Imposto de Renda Pessoa Jurídica</h4>
+              <span class="arrow">▼</span>
+            </div>
+            <p>Cálculo / alíquota: normalmente 15% sobre o lucro real ou presumido da empresa.</p>
+
+            <div class="tax-details">
+              <p>Para lucros anuais acima de determinado limite (no Brasil, lucros superiores a R$ 240.000/ano) há um adicional de 10% sobre o excedente. 
+A empresa pode optar por tributação trimestral ou anual, dependendo do regime — e há possibilidade de antecipação mensal ou trimestral. 
+Importância: serve para tributar a renda/profit das empresas; a arrecadação é federal e usada para custear despesas do governo federal. 
+</p>
+            </div>
+          </div>
+
+          <div class="tax-card" onclick="toggleCard(this)">
+  <div class="card-header">
+    <h4>CSLL – Contribuição Social sobre o Lucro Líquido</h4>
+    <span class="arrow">▼</span>
+  </div>
+
+  <p>A CSLL é uma contribuição federal cobrada sobre o lucro das empresas.</p>
+
+  <div class="tax-details">
+    <p>
+      A CSLL financia a Seguridade Social e incide diretamente sobre o lucro
+      líquido das pessoas jurídicas. As alíquotas variam entre 9% e 15%, de acordo
+      com o tipo de empresa. É um tributo obrigatório para a maioria das
+      atividades empresariais.
+    </p>
+  </div>
+</div>
+
+<div class="tax-card" onclick="toggleCard(this)">
+  <div class="card-header">
+    <h4>ICMS – Imposto sobre Circulação de Mercadorias e Serviços</h4>
+    <span class="arrow">▼</span>
+  </div>
+
+  <p>Tributo estadual aplicado à circulação de mercadorias e serviços.</p>
+
+  <div class="tax-details">
+    <p>
+      Cobrado pelos estados, o ICMS incide sobre vendas, transporte
+      intermunicipal e interestadual, telecomunicações e importações.
+      As alíquotas variam conforme o estado e o tipo de produto, ficando
+      geralmente entre 12% e 25%.
+    </p>
+  </div>
+</div>
+
+<div class="tax-card" onclick="toggleCard(this)">
+  <div class="card-header">
+    <h4>ISS – Imposto Sobre Serviços</h4>
+    <span class="arrow">▼</span>
+  </div>
+
+  <p>Imposto municipal sobre prestação de serviços.</p>
+
+  <div class="tax-details">
+    <p>
+      O ISS é cobrado pelos municípios e incide sobre qualquer atividade de
+      prestação de serviços prevista na Lei Complementar 116. As alíquotas
+      variam entre 2% e 5%, dependendo da atividade e da cidade.
+    </p>
+  </div>
+</div>
+
+<div class="tax-card" onclick="toggleCard(this)">
+  <div class="card-header">
+    <h4>INSS – Instituto Nacional do Seguro Social</h4>
+    <span class="arrow">▼</span>
+  </div>
+
+  <p>Contribuição previdenciária para aposentadorias e benefícios.</p>
+
+  <div class="tax-details">
+    <p>
+      O INSS financia a Previdência Social, responsável por aposentadorias,
+      auxílio-doença, pensão por morte e outros benefícios. Trabalhadores
+      contribuem com alíquotas progressivas entre 7,5% e 14%, enquanto empresas
+      geralmente pagam cerca de 20% sobre a folha.
+    </p>
+  </div>
+</div>
+
+<div class="tax-card" onclick="toggleCard(this)">
+  <div class="card-header">
+    <h4>Taxa de Licenciamento de Veículos</h4>
+    <span class="arrow">▼</span>
+  </div>
+
+  <p>Taxa anual estadual para emissão do documento obrigatório do veículo.</p>
+
+  <div class="tax-details">
+    <p>
+      A taxa de licenciamento é cobrada anualmente pelos departamentos estaduais
+      de trânsito (DETRAN) e permite a emissão do CRLV. O valor varia conforme o
+      estado e deve ser pago todos os anos para manter o veículo regularizado.
+    </p>
+  </div>
+</div>
+
+<div class="tax-card" onclick="toggleCard(this)">
+  <div class="card-header">
+    <h4>Taxa de Coleta de Lixo</h4>
+    <span class="arrow">▼</span>
+  </div>
+
+  <p>Taxa municipal usada para custear coleta de resíduos urbanos.</p>
+
+  <div class="tax-details">
+    <p>
+      Essa taxa é cobrada pelos municípios para financiar a coleta de lixo,
+      limpeza urbana e tratamento de resíduos. O valor costuma ser calculado
+      conforme a área do imóvel, sua localização e o serviço disponível na
+      região.
+    </p>
+  </div>
+</div>
+
+<div class="tax-card" onclick="toggleCard(this)">
+  <div class="card-header">
+    <h4>TSU – Taxa de Serviços Urbanos</h4>
+    <span class="arrow">▼</span>
+  </div>
+
+  <p>Taxa municipal para custear serviços urbanos essenciais.</p>
+
+  <div class="tax-details">
+    <p>
+      A TSU cobre serviços como varrição, drenagem, manutenção urbana,
+      iluminação pública e limpeza de vias. Cada município define seu próprio
+      cálculo e valores, normalmente baseado no tipo e tamanho do imóvel.
+    </p>
+  </div>
+</div>
+
+
+
+          <!-- CARD 2 -->
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>IPI - Produtos Industrializados</h4>
+              <span class="arrow">▼</span>
+            </div>
+            <p>Incide sobre produtos fabricados.</p>
+
+            <div class="tax-details">
+              <p><h4>O que é o IPI</h4> O IPI (Imposto sobre Produtos Industrializados) é um tributo federal cobrado sobre todos os produtos que passam por algum processo de industrialização. A industrialização pode ser transformação, beneficiamento, montagem, renovação ou recondicionamento. O imposto incide tanto sobre produtos nacionais quanto importados.
+<h4>Objetivo do IPI</h4> O IPI tem como finalidade: - Arrecadar recursos para o governo federal. - Regular a produção e o consumo de determinados produtos. - Desestimular produtos considerados prejudiciais, como cigarros e bebidas alcoólicas. - Estimular ou desestimular setores da indústria por meio de alíquotas diferenciadas.
+<h4>Quem é responsável pelo pagamento</h4> O recolhimento do IPI é feito principalmente por: - Indústrias brasileiras. - Importadores de produtos industrializados. - Empresas equiparadas à indústria.
+
+O consumidor final não paga diretamente; o valor já vem incluído no preço.
+
+<h4>Quando o IPI é cobrado</h4> O imposto é cobrado quando: - O produto sai da indústria. - O produto é importado. - Há operação equiparada à industrialização.
+<h4>Como o IPI é calculado</h4> O cálculo leva em conta: - Valor do produto + frete + seguro + despesas - Alíquota definida pela TIPI
+
+Fórmula: IPI = Valor do Produto × Alíquota
+
+<h4>Isenções e reduções</h4> Alguns itens possuem isenção, como: - Produtos para exportação - Máquinas agrícolas - Itens para pessoas com deficiência (em casos específicos) - Livros, jornais e periódicos
+<h4>Importância do IPI</h4> O IPI é importante porque: - Gera arrecadação federal significativa. - Ajuda a regular consumo e produção. - Impacta diretamente o preço de bens industrializados.</p>
+            </div>Usado em praticamente tudo que envolve circulação comercial. Mudança de estado também altera a cobrança.</p>
+            </div>
+          </div>
+
+         
+
+
+        <!-- DECLARAÇÃO -->
         <div id="declaracao" class="content-section">
           <h1 class="content-title">Como Declarar Impostos</h1>
-          <div class="content-body">
-            <p>A declaração de impostos é um processo anual obrigatório para muitos contribuintes. Veja o passo a passo:</p>
-            
-            <h3>Passo a Passo da Declaração</h3>
-            <ol class="steps-list">
-              <li>
-                <strong>Verifique se você precisa declarar</strong>
-                <p>Nem todos são obrigados a declarar. Verifique os critérios de obrigatoriedade.</p>
-              </li>
-              <li>
-                <strong>Reúna os documentos necessários</strong>
-                <p>Informes de rendimentos, recibos médicos, comprovantes de despesas dedutíveis, etc.</p>
-              </li>
-              <li>
-                <strong>Baixe o programa da Receita Federal</strong>
-                <p>Disponível no site oficial durante o período de declaração.</p>
-              </li>
-              <li>
-                <strong>Preencha as informações</strong>
-                <p>Insira todos os dados solicitados com atenção e precisão.</p>
-              </li>
-              <li>
-                <strong>Revise e envie</strong>
-                <p>Confira todas as informações antes de transmitir a declaração.</p>
-              </li>
-            </ol>
 
-            <div class="warning-box">
-              <h4>Atenção aos prazos!</h4>
-              <p>A declaração geralmente deve ser enviada entre março e abril. Fique atento ao calendário oficial para evitar multas por atraso.</p>
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>1. Verifique a Obrigatoriedade</h4>
+              <span class="arrow">▼</span>
+            </div>
+            <p>Nem todos precisam declarar.</p>
+
+            <div class="tax-details">
+              <p>Quem recebeu acima do limite anual, realizou operações na bolsa ou possui bens acima do valor definido deve declarar.</p>
+            </div>
+          </div>
+
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>2. Reúna Documentos</h4>
+              <span class="arrow">▼</span>
+            </div>
+            <p>Informes e comprovantes.</p>
+
+            <div class="tax-details">
+              <p>Esses documentos são essenciais para evitar erros que podem gerar multas.</p>
             </div>
           </div>
         </div>
 
+        <!-- DICAS -->
         <div id="dicas" class="content-section">
           <h1 class="content-title">Dicas e Estratégias</h1>
-          <div class="content-body">
-            <p>Aprenda estratégias legais para otimizar sua carga tributária e evitar problemas com o fisco:</p>
-            
-            <h3>Planejamento Tributário</h3>
-            <div class="tip-card">
-              <h4>1. Organize seus documentos</h4>
-              <p>Mantenha todos os comprovantes e recibos organizados durante o ano todo. Isso facilita a declaração e garante que você não perca deduções importantes.</p>
+
+          <div class="tax-card" onclick="toggleCard(this)">
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>ICMS - Mercadorias e Serviços</h4>
+              <span class="arrow">▼</span>
             </div>
-            
-            <div class="tip-card">
-              <h4>2. Conheça as deduções permitidas</h4>
-              <p>Despesas com educação, saúde, previdência privada e dependentes podem ser deduzidas. Aproveite todas as possibilidades legais.</p>
+            <p>Principal imposto estadual.</p>
+
+            <div class="tax-details">
+              <p>
+            <div class="card-header">
+              <h4>Organize seus documentos</h4>
+              <span class="arrow">▼</span>
             </div>
-            
-            <div class="tip-card">
-              <h4>3. Escolha o modelo correto</h4>
-              <p>Compare a declaração simplificada com a completa para ver qual é mais vantajosa para seu caso.</p>
+            <p>Evite perder deduções importantes.</p>
+
+            <div class="tax-details">
+              <p>Tenha uma pasta anual separada para saúde, educação e rendimentos.</p>
             </div>
-            
-            <div class="tip-card">
-              <h4>4. Declare no início do prazo</h4>
-              <p>Quem declara primeiro tem prioridade na restituição. Além disso, evita o risco de perder o prazo.</p>
+          </div>
+
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>Escolha o modelo certo</h4>
+              <span class="arrow">▼</span>
             </div>
-            
-            <div class="tip-card">
-              <h4>5. Consulte um profissional</h4>
-              <p>Em casos complexos, um contador pode ajudar a otimizar sua declaração e evitar erros.</p>
+            <p>Completo ou simplificado?</p>
+
+            <div class="tax-details">
+              <p>Use o simulador dentro do próprio programa da Receita para ver qual rende menos imposto.</p>
             </div>
           </div>
         </div>
 
+        <!-- PERGUNTAS FREQUENTES -->
         <div id="perguntas" class="content-section">
           <h1 class="content-title">Perguntas Frequentes</h1>
-          <div class="content-body">
-            <div class="faq-item">
-              <h4>Quem é obrigado a declarar Imposto de Renda?</h4>
-              <p>Devem declarar pessoas que receberam rendimentos tributáveis acima do limite estabelecido pela Receita Federal, possuem bens acima de determinado valor, realizaram operações na bolsa de valores, entre outros critérios.</p>
+
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>Quem precisa declarar?</h4>
+              <span class="arrow">▼</span>
             </div>
-            
-            <div class="faq-item">
-              <h4>O que acontece se eu não declarar?</h4>
-              <p>O não envio da declaração resulta em multa mínima de R$ 165,74, podendo chegar a 20% do imposto devido. Além disso, seu CPF fica irregular, impedindo diversas operações financeiras.</p>
+            <p>Quem ultrapassa o limite anual.</p>
+
+            <div class="tax-details">
+              <p>O valor muda todo ano — consulte a Receita para garantir.</p>
             </div>
-            
-            <div class="faq-item">
-              <h4>Posso retificar minha declaração?</h4>
-              <p>Sim! É possível enviar uma declaração retificadora para corrigir erros ou incluir informações esquecidas. Isso pode ser feito a qualquer momento após o envio da declaração original.</p>
+          </div>
+
+          <div class="tax-card" onclick="toggleCard(this)">
+            <div class="card-header">
+              <h4>O que acontece se não declarar?</h4>
+              <span class="arrow">▼</span>
             </div>
-            
-            <div class="faq-item">
-              <h4>Como funciona a restituição?</h4>
-              <p>Se você pagou mais impostos do que devia durante o ano, tem direito à restituição. O valor é devolvido em lotes ao longo do ano, com prioridade para idosos, pessoas com deficiência e quem declarou primeiro.</p>
-            </div>
-            
-            <div class="faq-item">
-              <h4>Preciso declarar rendimentos de freelance?</h4>
-              <p>Sim! Todos os rendimentos devem ser declarados, incluindo trabalhos autônomos, freelance e rendimentos informais. A não declaração pode resultar em problemas com a Receita Federal.</p>
-            </div>
-            
-            <div class="faq-item">
-              <h4>Como declarar criptomoedas?</h4>
-              <p>Criptomoedas devem ser declaradas como bens e direitos. Além disso, operações acima de R$ 35 mil por mês devem ser informadas mensalmente através do programa específico da Receita Federal.</p>
+            <p>CPF irregular.</p>
+
+            <div class="tax-details">
+              <p>Também impede empréstimos, concursos e emissão de passaporte.</p>
             </div>
           </div>
         </div>
+
+        <!-- TABELA -->
         <div id="tabela" class="content-section">
-    <h1 class="content-title">Tabela de base calcular IRPF</h1>
-    <div class="content-body" style="text-align: center;">
-      <p> 
-        A tabela abaixo apresenta uma organização dos nomes e informações relevantes utilizadas 
-        nas atividades educativas do projeto <strong>IMPOLINE</strong>. Ela serve como referência visual 
-        para facilitar o acompanhamento dos conteúdos, a identificação dos participantes e a 
-        estruturação das etapas de aprendizagem.
-      </p>
+          <h1 class="content-title">Tabela IRPF</h1>
 
-      <p>
-        Essa representação também reforça a importância do registro e da clareza das informações, 
-        princípios essenciais na educação fiscal e no entendimento sobre transparência pública.
-      </p>
-
-      <img src="imagem_2025-10-31_151323286.png" alt="Tabela de nomes" 
-          style="max-width: 100%; height: auto; margin-top: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
-
-      <div class="info-box" style="margin-top: 25px;">
-        <h4>Importante!</h4>
-        <p>
-          A leitura e interpretação dessa tabela auxiliam na compreensão dos dados e na organização 
-        de informações dentro do contexto educativo, incentivando o desenvolvimento de habilidades 
-        analíticas e de gestão da informação.
-      </p>
-    </div>
-  </div>
+          <img src="imagem_2025-10-31_151323286.png" style="max-width:100%; border-radius:10px;">
+        </div>
 
       </main>
     </div>
 
     <script src="educacao.js"></script>
+
+    <!-- SCRIPT + CSS PARA ABRIR / FECHAR OS CARDS -->
+    <script>
+      function toggleCard(card) {
+        let details = card.querySelector(".tax-details");
+        let arrow = card.querySelector(".arrow");
+
+        details.classList.toggle("open");
+        arrow.classList.toggle("open");
+      }
+    </script>
+
+    <style>
+      .tax-details { display: none; }
+      .tax-details.open { display: block; }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .arrow {
+        transition: 0.3s ease;
+        font-size: 18px;
+      }
+
+      .arrow.open {
+        transform: rotate(180deg);
+      }
+    </style>
+
   </body>
 </html>

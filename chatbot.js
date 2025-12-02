@@ -4,6 +4,72 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesContainer = document.getElementById("chatMessages");
 
   const knowledgeBase = {
+    "leao": {
+  keywords: ["leao", "leão", "o leao", "o leão"],
+  response:
+    "Acho que você quis dizer **“Leão”** 😉. Esse é o apelido do Imposto de Renda — o pessoal fala assim porque a Receita ‘morde’ quando algo tá errado 😂. Então, sempre que falar do Leão, estamos falando do Imposto de Renda mesmo."
+},
+
+"quem_precisa_declarar": {
+  keywords: ["quem precisa declarar", "obrigado declarar", "sou obrigado", "preciso declarar"],
+  response:
+    "Você precisa declarar se ganhou acima do limite anual da Receita, vendeu bens, investiu, teve renda no exterior ou possui bens acima dos valores obrigatórios. Se pintou dúvida, melhor conferir pra não ter problema com o Leão 😉."
+},
+
+"malha_fina": {
+  keywords: ["malha fina", "cair na malha", "malha", "mordida do leao"],
+  response:
+    "‘Malha fina’ é quando a Receita segura sua declaração pra revisar. Normalmente por erro, falta de recibo ou informação que não bate. Nada de desespero — só corrigir certinho."
+},
+
+"retificadora": {
+  keywords: ["retificar", "corrigir declaração", "declaracao errada", "retificadora"],
+  response:
+    "Errou alguma coisa? Sem pânico! Dá pra corrigir enviando uma **declaração retificadora** no mesmo programa do IR. Quanto antes ajustar, melhor."
+},
+
+"dependentes": {
+  keywords: ["dependente", "dependentes", "colocar dependente", "quem pode ser dependente"],
+  response:
+    "Dependentes ajudam a aumentar deduções. Pode ser filho, cônjuge ou parentes que você sustenta. Mas cuidado: colocar dependente também puxa a renda dele pra sua declaração."
+},
+
+"conjunta_ou_separada": {
+  keywords: ["conjunta", "separada", "declarar junto", "casal declarar"],
+  response:
+    "Casal pode declarar junto ou separado. Junto pode compensar quando um ganha menos. O ideal é testar os dois jeitos pra ver qual dá mais vantagem."
+},
+
+"cpf_irregular": {
+  keywords: ["cpf irregular", "regularizar cpf", "cpf pendente"],
+  response:
+    "Se o CPF tá irregular, a declaração pode travar. Isso acontece por pendências antigas, dívidas ou falta de declaração. No site da Receita dá pra ver e regularizar rapidinho."
+},
+
+"venda_imovel": {
+  keywords: ["venda imóvel", "vendi casa", "lucro imobiliário", "imposto imóvel"],
+  response:
+    "Ao vender um imóvel com lucro, pode ter imposto de **ganho de capital**. Mas tem exceções, como usar o dinheiro pra comprar outro imóvel em até 180 dias."
+},
+
+"bolsa_valores": {
+  keywords: ["bolsa", "ações", "investimentos", "renda variável", "bolsa de valores"],
+  response:
+    "Se você investe em ações, FIIs ou renda variável, precisa declarar tudo — mesmo com prejuízo. Dependendo da operação, pode ter imposto a pagar. O Leão acompanha tudo 👀."
+},
+
+"declaracao_atrasada": {
+  keywords: ["atrasada", "declarar atrasado", "perdi prazo", "esqueci declarar"],
+  response:
+    "Perdeu o prazo? Dá pra declarar mesmo assim, mas rola multa mínima e juros. Quanto antes enviar, melhor pro bolso."
+},
+
+"documento_faltando": {
+  keywords: ["faltando documento", "perdi recibo", "nao tenho comprovante", "sem informe"],
+  response:
+    "Perdeu documento? Peça segunda via ao banco, empresa ou médico. Não inventa valores — o Leão confere tudo. Se depois conseguir o documento, dá pra retificar."
+},
+
     "imposto de renda": {
       keywords: ["imposto de renda", "ir", "irpf", "declaração", "imposto rend"],
       response:

@@ -549,6 +549,63 @@ a{
   background-color: rgba(245, 158, 11, 0.1);
   border-left: 4px solid #f59e0b;
 }
+.warning {
+  max-width: 600px;              /* largura máxima da caixa */
+  margin: 2rem auto;             /* centraliza horizontalmente */
+  padding: 1rem 1.5rem;          /* espaço interno */
+  border-radius: 0.5rem;         /* cantos arredondados */
+  display: flex;                 /* para alinhar ícone e texto, se quiser */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid #f59e0b;
+  color: black;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* sombra leve */
+}
+.tax-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 12px 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tax-card:hover {
+  transform: scale(1.01);
+}
+
+.tax-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 10px;
+  opacity: 0;
+}
+
+.tax-card.active .tax-details {
+  max-height: 500px; /* altura suficiente */
+  opacity: 1;
+}
+
+
+.resultado-info {
+  background-color: rgba(243, 243, 243, 0.8);
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.resultado-info p {
+  margin: 0.5rem 0;
+}
+
 
 .info-box h4,
 .warning-box h4 {

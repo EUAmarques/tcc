@@ -4,3 +4,4 @@
 3. Inicialize o projeto: `firebase init hosting`
 4. Selecione a pasta com seus arquivos HTML/CSS/JS
 5. Deploy: `firebase deploy`
+firebase deploy --only hosting
